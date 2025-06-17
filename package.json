@@ -1,0 +1,27 @@
+{
+    "name": "sistema_contratos_web",
+    "version": "1.0.0",
+    "description": "Sistema web para gestión de contratos de personal",
+    "main": "server/server.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "dev": "nodemon server/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "docx": "^8.1.1",
+        "docxtemplater": "^3.62.0",
+        "dotenv": "^16.5.0",
+        "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.14.2",
+        "mysql2": "^3.14.1",
+        "particles.js": "^2.0.0",
+        "pizzip": "^3.2.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    }
+}

@@ -1,0 +1,57 @@
+/* /public/css/glass.css */
+/* glass.css - estilo glassmorphism común */
+:root {
+  --primary-color: #4b7d94;
+  --secondary-color: #0c48a3;
+  --accent-color: #143171;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --glass-color: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f75cd 0%, #1b4b85 100%);
+  overflow-x: hidden; /* permite scroll vertical */
+}
+
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.glass-card {
+  max-width: 960px;
+  margin: 0 auto; /* <-- centrado horizontal */
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--glass-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  color: white;
+  overflow: visible;
+}
+
+
+.glass-card h2 {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,225 @@
+<!-- /public/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Contratos</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
+  <link rel="stylesheet" href="css/glass.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.bootstrap5.min.css" />
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <div class="glass-card text-center">
+    <img src="images/logo_empresa.png" alt="Logo" style="max-width: 200px; margin-bottom: 1rem;" />
+    <h2 class="text-center">Registro de Empleados</h2>
+
+    <form id="formulario-empleado" class="row g-3 mt-3">
+      <div class="col-md-3">
+        <label for="id" class="form-label">ID</label>
+        <input type="text" class="form-control" id="id" maxlength="10" />
+      </div>
+      <div class="col-md-9">
+        <label for="nombre" class="form-label">Nombre del Empleado</label>
+        <input type="text" class="form-control" id="nombre" />
+      </div>
+      <div class="col-md-6">
+        <label for="tipo-contrato" class="form-label">Tipo de Contrato</label>
+        <select class="form-select" id="tipo-contrato">
+          <option value="">Seleccionar</option>
+          <option value="Determinado">Determinado</option>
+          <option value="Indeterminado">Indeterminado</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="puesto" class="form-label">Puesto</label>
+        <select class="form-select" id="puesto">
+          <option value="">Seleccionar</option>
+          <option value="Médico">Médico General</option>
+          <option value="Enfermero">Enfermero General</option>
+          <option value="Cocinero">Cocinero</option>
+          <option value="Administrador">Auxiliar de Cocina</option>
+          <option value="Recepcionista">Operador</option>
+          <option value="Recepcionista">Valet Parking</option>
+          <option value="Recepcionista">Seguridad</option>
+          <option value="Recepcionista">Calidad</option>
+          <option value="Recepcionista">Auxiliar de Almacen</option>
+          <option value="Recepcionista">Jefatura de Almacen</option>
+          <option value="Recepcionista">Jefatura de Servicios Generales</option>
+          <option value="Recepcionista">Auxiliar de Servicios Generales</option>
+          <option value="Recepcionista">Cajera General</option>
+          <option value="Recepcionista">Cajera de Cocina</option>
+          <option value="Recepcionista">Asistente</option>
+          <option value="Recepcionista">Auxiliar de Admision</option>
+          <option value="Recepcionista">Epidemiologia</option>
+          <option value="Recepcionista">Biomedica</option>
+          <option value="Recepcionista">Inhaloterapia</option>
+          <option value="Recepcionista">Sistemas</option>
+          <option value="Recepcionista">Encargada de Archivo</option>
+          <option value="Recepcionista">Intendencia</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="number" class="form-control" id="edad" />
+      </div>
+      <div class="col-md-3">
+        <label for="nacionalidad" class="form-label">Nacionalidad</label>
+        <input type="text" class="form-control" id="nacionalidad" />
+      </div>
+      <div class="col-md-3">
+        <label for="sexo" class="form-label">Sexo</label>
+        <select class="form-select" id="sexo">
+          <option value="">Seleccionar</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="estadoCivil" class="form-label">Estado Civil</label>
+        <select class="form-select" id="estadoCivil">
+          <option value="">Seleccionar</option>
+          <option value="Soltero">Soltero</option>
+          <option value="Casado">Casado</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="curp" class="form-label">CURP</label>
+        <input type="text" class="form-control" id="curp" />
+      </div>
+      <div class="col-md-6">
+        <label for="rfc" class="form-label">RFC</label>
+        <input type="text" class="form-control" id="rfc" />
+      </div>
+      <div class="col-md-6">
+        <label for="claveINE" class="form-label">Clave INE</label>
+        <input type="text" class="form-control" id="claveINE" />
+      </div>
+      <div class="col-md-6">
+        <label for="domicilio" class="form-label">Domicilio</label>
+        <input type="text" class="form-control" id="domicilio" />
+      </div>
+
+      <!-- 🚀 NUEVO SELECT: Tipo de contrato plantilla para Word -->
+     <div class="col-md-6">
+  <label for="tipoContratoPlantilla" class="form-label">Plantilla de Contrato</label>
+  <select class="form-select" id="tipoContratoPlantilla">
+    <option value="">Seleccionar</option>
+    <option value="Almacen">Almacén</option>
+    <option value="Archivo">Archivo</option>
+    <option value="Biomedica">Biomédica</option>
+    <option value="CajaCocina">Cajera Cocina</option>
+    <option value="Cajas">Cajera General</option>
+    <option value="Calidad">Calidad</option>
+    <option value="Camillero">Camillero</option>
+    <option value="Cocina">Cocina</option>
+    <option value="Cocinero">Cocinero</option>
+    <option value="Enfermeria">Enfermería</option>
+    <option value="Epidemiologia">Epidemiología</option>
+    <option value="Inhaloterapia">Inhaloterapia</option>
+    <option value="Intendencia">Intendencia</option>
+    <option value="JefaturaALM">Jefatura de Almacén</option>
+    <option value="Medicos">Médicos</option>
+    <option value="Recepcionista">Recepcionista</option>
+    <option value="Seguridad">Seguridad</option>
+    <option value="ServiciosGenerales">Servicios Generales</option>
+    <option value="Sistemas">Sistemas</option>
+    <option value="Publicas">Relaciones Públicas</option>
+  </select>
+</div>
+
+
+      <div class="col-md-6">
+        <label for="duracionContrato" class="form-label">Duración del Contrato</label>
+        <input type="text" class="form-control" id="duracionContrato" />
+      </div>
+      <div class="col-md-6">
+        <label for="sueldoPesos" class="form-label">Sueldo en Pesos</label>
+        <input type="text" class="form-control" id="sueldoPesos" placeholder="$0.00" />
+      </div>
+      <div class="col-md-6">
+        <label for="sueldoLetra" class="form-label">Sueldo en Letra</label>
+        <input type="text" class="form-control" id="sueldoLetra" />
+      </div>
+      <div class="col-md-3">
+        <label for="fechaContrato" class="form-label">Fecha de Contrato</label>
+        <input type="date" class="form-control" id="fechaContrato" />
+      </div>
+      <div class="col-md-3">
+        <label for="fechaVencimiento" class="form-label">Fecha de Vencimiento</label>
+        <input type="date" class="form-control" id="fechaVencimiento" />
+      </div>
+    </form>
+
+    <div class="mt-4 text-center">
+      
+  <button id="btn-guardar" class="btn btn-success me-2">Guardar</button>
+  <button id="btn-generar-word" class="btn btn-primary me-2">Generar Contrato</button>
+  <button id="btn-eliminar" class="btn btn-danger">Eliminar</button>
+  <a href="dashboard.html" class="btn btn-primary" style="margin: 10px;">Ir al Dashboard</a>
+<button onclick="cerrarSesion()" class="btn btn-danger" style="margin: 10px;">Cerrar Sesión</button>
+
+
+</div>
+
+
+    <hr class="my-4" />
+
+    <h4 class="text-white">Lista de Empleados</h4>
+    <input type="text" id="filtro" class="form-control mb-3" placeholder="Filtrar por nombre, puesto o contrato..." />
+
+    <div class="table-responsive mt-4">
+      <table class="table table-hover table-bordered table-light table-sm" id="tabla-empleados">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Puesto</th>
+            <th>Tipo Contrato</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div id="resultados-busqueda" class="mt-4 text-start" style="display: none;"></div>
+  </div>
+
+  <!-- 📦 Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 70, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: { enable: true, color: "#ffffff", opacity: 0.3, width: 1 },
+        move: { enable: true, speed: 2 }
+      }
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.bootstrap5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+
+</body>
+</html>
